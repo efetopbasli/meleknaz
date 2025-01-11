@@ -1,0 +1,166 @@
+/* GENEL AYARLAR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif, Arial, Helvetica, sans-serif;
+}
+
+/* AÇIK TEMA (DEFAULT) RENKLERİ */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --box-bg-color: #f7f7f7;
+  --box-border-color: #dddddd;
+
+  /* KOYU TEMA İÇİN RENKLER */
+  --bg-color-dark: #1a1a1a;
+  --text-color-dark: #f5f5f5;
+  --box-bg-color-dark: #333333;
+  --box-border-color-dark: #666666;
+}
+
+/* KOYU MOD AKTİF İKEN BODY ÜZERİNDE BİR SINIF */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .question-box {
+  background-color: var(--box-bg-color-dark);
+  border: 1px solid var(--box-border-color-dark);
+}
+
+body.dark-mode .btn.primary {
+  background-color: #b472ff;
+  color: #ffffff;
+}
+
+body.dark-mode .btn.secondary {
+  background-color: #555555;
+  color: #eeeeee;
+}
+
+/* KONTEYNER */
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* SORULARI GÖSTER/GİZLE VE KOYU MOD BUTONLARI */
+.button-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.primary {
+  background-color: #8c52ff; /* Morumsu */
+  color: #fff;
+}
+
+.btn.secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* SORULAR BÖLÜMÜ */
+.questions {
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Sorular ilk başta gizli ise .hide ile kontrol ediyoruz */
+.hide {
+  display: none;
+}
+
+/* TEK TEK SORULARIN GÖRÜNÜMÜ */
+.question-box {
+  background-color: var(--box-bg-color);
+  border: 1px solid var(--box-border-color);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  animation: fadeIn 1s forwards; /* Basit bir giriş animasyonu */
+}
+
+/* SORU BAŞLIĞI */
+.question-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* SORU CEVABI */
+.answer {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ALT KISIM (FOOTER) */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* BASİT FADE-IN ANİMASYONU */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+  .question-title {
+    font-size: 1rem;
+  }
+  .answer {
+    font-size: 0.9rem;
+  }
+}
